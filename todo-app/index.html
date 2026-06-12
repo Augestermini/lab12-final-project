@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Lab 12 Todo Application" />
+    <title>Focus List | Todo App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="/">FOCUS<span>LIST</span></a>
+      <a class="back-link" id="website-link" href="/Personal-Website">团队网站 <span>↗</span></a>
+    </header>
+
+    <main>
+      <section class="intro">
+        <p class="date" id="date"></p>
+        <h1>今天要完成什么？</h1>
+        <p>记录任务，保持专注，一项一项完成。</p>
+      </section>
+
+      <section class="todo-panel" aria-label="任务列表">
+        <form id="todo-form">
+          <label class="sr-only" for="todo-input">新任务</label>
+          <input
+            id="todo-input"
+            maxlength="100"
+            placeholder="输入一个新任务..."
+            autocomplete="off"
+            required
+          />
+          <button type="submit" aria-label="添加任务">
+            <span>+</span>
+          </button>
+        </form>
+
+        <div class="list-header">
+          <h2>我的任务</h2>
+          <span id="task-count">0 项待完成</span>
+        </div>
+
+        <ul id="todo-list"></ul>
+
+        <div class="empty-state" id="empty-state">
+          <div class="empty-mark">✓</div>
+          <h3>任务都完成了</h3>
+          <p>在上方输入框添加你的第一项任务。</p>
+        </div>
+
+        <div class="list-footer">
+          <span id="complete-count">已完成 0 项</span>
+          <button id="clear-completed" type="button">清除已完成</button>
+        </div>
+      </section>
+    </main>
+
+    <template id="todo-template">
+      <li>
+        <button class="check-button" type="button" aria-label="切换完成状态">
+          <span>✓</span>
+        </button>
+        <span class="task-text"></span>
+        <button class="delete-button" type="button" aria-label="删除任务">×</button>
+      </li>
+    </template>
+
+    <script>
+      document.querySelector("#website-link").href =
+        `${window.location.protocol}//${window.location.hostname}:8081`;
+    </script>
+    <script src="app.js"></script>
+  </body>
+</html>

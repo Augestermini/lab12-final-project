@@ -1,0 +1,274 @@
+:root {
+  --ink: #17211d;
+  --muted: #718078;
+  --paper: #f3f6f3;
+  --white: #ffffff;
+  --green: #28704d;
+  --lime: #d9ed70;
+  --line: #dce3de;
+  --danger: #b33b3b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "DM Sans", "Noto Sans SC", sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+header {
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  height: 72px;
+  justify-content: space-between;
+  padding: 0 max(22px, calc((100vw - 760px) / 2));
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.brand {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.brand span {
+  color: var(--green);
+}
+
+.back-link {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 760px;
+  padding: 80px 22px;
+}
+
+.intro {
+  margin-bottom: 36px;
+}
+
+.date {
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 700;
+  margin: 0 0 14px;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: clamp(38px, 7vw, 62px);
+  line-height: 1.1;
+  margin: 0 0 14px;
+}
+
+.intro > p:last-child {
+  color: var(--muted);
+  margin: 0;
+}
+
+.todo-panel {
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 28px;
+}
+
+form {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 52px;
+}
+
+input {
+  border: 1px solid var(--line);
+  color: var(--ink);
+  min-width: 0;
+  outline: none;
+  padding: 15px 16px;
+  transition: border-color 160ms;
+}
+
+input:focus {
+  border-color: var(--green);
+}
+
+form button {
+  background: var(--green);
+  border: 0;
+  color: var(--white);
+  font-size: 28px;
+}
+
+.list-header,
+.list-footer {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.list-header {
+  border-bottom: 1px solid var(--line);
+  margin-top: 32px;
+  padding-bottom: 16px;
+}
+
+.list-header h2 {
+  font-size: 17px;
+  margin: 0;
+}
+
+.list-header span,
+.list-footer {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 24px 1fr 32px;
+  min-height: 64px;
+}
+
+.check-button {
+  align-items: center;
+  background: transparent;
+  border: 1px solid #aeb9b2;
+  border-radius: 50%;
+  color: transparent;
+  display: flex;
+  height: 22px;
+  justify-content: center;
+  padding: 0;
+  width: 22px;
+}
+
+li.completed .check-button {
+  background: var(--green);
+  border-color: var(--green);
+  color: var(--white);
+}
+
+.task-text {
+  overflow-wrap: anywhere;
+}
+
+li.completed .task-text {
+  color: var(--muted);
+  text-decoration: line-through;
+}
+
+.delete-button {
+  background: transparent;
+  border: 0;
+  color: #9aa69f;
+  font-size: 22px;
+  height: 32px;
+  opacity: 0;
+  padding: 0;
+  transition: color 160ms, opacity 160ms;
+}
+
+li:hover .delete-button,
+.delete-button:focus-visible {
+  opacity: 1;
+}
+
+.delete-button:hover {
+  color: var(--danger);
+}
+
+.empty-state {
+  padding: 56px 20px;
+  text-align: center;
+}
+
+.empty-mark {
+  align-items: center;
+  background: var(--lime);
+  border-radius: 50%;
+  display: flex;
+  font-size: 22px;
+  height: 52px;
+  justify-content: center;
+  margin: 0 auto 18px;
+  width: 52px;
+}
+
+.empty-state h3 {
+  font-size: 16px;
+  margin: 0 0 8px;
+}
+
+.empty-state p {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 0;
+}
+
+.list-footer {
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+}
+
+.list-footer button {
+  background: transparent;
+  border: 0;
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px;
+}
+
+.sr-only {
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+@media (max-width: 560px) {
+  main {
+    padding-top: 52px;
+  }
+
+  .todo-panel {
+    padding: 18px;
+  }
+
+  .delete-button {
+    opacity: 1;
+  }
+}

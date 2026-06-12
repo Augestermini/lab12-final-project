@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Lab 12 Final Project 两人个人网站" />
+    <title>我们的个人网站 | Lab 12</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top">LAB 12 <span>TEAM</span></a>
+      <nav aria-label="主导航">
+        <a href="#members">成员</a>
+        <a href="#project">项目</a>
+        <a class="nav-action" id="todo-link" href="/Todo-App">Todo App</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">FINAL PROJECT · 2026</p>
+          <h1>两个人，一次完整的<br />云端部署实践。</h1>
+          <p class="hero-text">
+            我们使用 HTML、CSS、JavaScript、Docker Compose 与 GitHub Actions，
+            构建并自动部署个人网站和 Todo 应用。
+          </p>
+          <div class="hero-actions">
+            <a class="primary-button" href="#members">认识团队</a>
+            <a class="text-link" href="#project">查看项目 <span>→</span></a>
+          </div>
+          <div class="status-note">
+            <span class="status-dot"></span>
+            <div><strong>2 apps</strong><small>Dockerized & deployed</small></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="members" class="members-section">
+        <div class="section-heading">
+          <p class="eyebrow">OUR TEAM</p>
+          <h2>团队成员</h2>
+          <p>共同完成从界面开发到服务器自动部署的全部流程。</p>
+        </div>
+
+        <div class="member-grid">
+          <article class="member-card">
+            <img
+              src="assets/member-1.jpg"
+              alt="LiuHuanchu 照片"
+            />
+            <div class="member-content">
+              <div class="member-meta"><span>01</span><span>Website · Documentation</span></div>
+              <h3>LiuHuanchu</h3>
+              <p class="student-id">学号：20242198</p>
+              <p>
+                主要负责个人网站、README 和项目文档，完成团队展示页面的设计、内容整理与使用说明。
+              </p>
+            </div>
+          </article>
+
+          <article class="member-card">
+            <img
+              src="assets/member-2.jpg"
+              alt="YingJiakang 照片"
+            />
+            <div class="member-content">
+              <div class="member-meta"><span>02</span><span>Docker · Deployment</span></div>
+              <h3>YingJiakang</h3>
+              <p class="student-id">学号：20242191</p>
+              <p>
+                主要负责 Docker、Docker Compose、GitHub Actions 和服务器部署，完成应用容器化与自动部署流程。
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="project" class="project-section">
+        <div>
+          <p class="eyebrow">THE PROJECT</p>
+          <h2>一个仓库，两个应用，<br />一条自动部署流水线。</h2>
+        </div>
+        <div class="project-list">
+          <div><strong>01</strong><span>个人网站</span><small>Port 8081</small></div>
+          <div><strong>02</strong><span>Todo 应用</span><small>Port 8082</small></div>
+          <div><strong>03</strong><span>GitHub Actions</span><small>SSH Deploy</small></div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Lab 12 Final Project</p>
+      <p>Built with Docker & GitHub Actions</p>
+    </footer>
+    <script>
+      document.querySelector("#todo-link").href =
+        `${window.location.protocol}//${window.location.hostname}:8082`;
+    </script>
+  </body>
+</html>
