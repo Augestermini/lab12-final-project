@@ -16,7 +16,10 @@ jobs:
           host: 18.212.128.175
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
-          port: ${{ secrets.SERVER_PORT }}
+          port: 22
+          timeout: 30s
+          command_timeout: 10m
+          debug: true
           script: |
             set -e
             PROJECT_DIR="$HOME/lab12-final-project"

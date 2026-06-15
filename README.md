@@ -61,7 +61,6 @@ The following GitHub Actions secrets are required:
 | --- | --- |
 | `SERVER_USER` | SSH username |
 | `SERVER_SSH_KEY` | SSH private key |
-| `SERVER_PORT` | SSH port |
 
 The server must have Git, Docker, and Docker Compose installed. Ports `8081` and `8082` must be open.
 
