@@ -59,7 +59,6 @@ The following GitHub Actions secrets are required:
 
 | Secret | Description |
 | --- | --- |
-| `SERVER_HOST` | Server IP address or hostname |
 | `SERVER_USER` | SSH username |
 | `SERVER_SSH_KEY` | SSH private key |
 | `SERVER_PORT` | SSH port |
