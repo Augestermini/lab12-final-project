@@ -18,8 +18,8 @@ Each application has its own Dockerfile. Docker Compose runs both applications, 
 
 | Application | Local URL | Server URL |
 | --- | --- | --- |
-| Personal Website | http://localhost:8081 | http://18.212.128.175:8081 |
-| Todo Application | http://localhost:8082 | http://18.212.128.175:8082 |
+| Personal Website | http://localhost:8081 | http://54.146.107.207:8081 |
+| Todo Application | http://localhost:8082 | http://54.146.107.207:8082 |
 
 ## Project Structure
 

@@ -13,7 +13,7 @@ jobs:
       - name: Deploy applications over SSH
         uses: appleboy/ssh-action@v1.2.0
         with:
-          host: 18.212.128.175
+          host: 54.146.107.207
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           port: 22
