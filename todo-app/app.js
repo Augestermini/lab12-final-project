@@ -31,6 +31,14 @@ function saveTodos() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(todos));
 }
 
+function createTodoId() {
+  if (typeof crypto.randomUUID === "function") {
+    return crypto.randomUUID();
+  }
+
+  return `${Date.now()}-${Math.random().toString(16).slice(2)}`;
+}
+
 function renderTodos() {
   list.replaceChildren();
 
@@ -64,7 +72,7 @@ form.addEventListener("submit", (event) => {
 
   updateTodos([
     ...todos,
-    { id: crypto.randomUUID(), text, completed: false },
+    { id: createTodoId(), text, completed: false },
   ]);
   form.reset();
   input.focus();
